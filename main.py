@@ -17,13 +17,15 @@ with open("countries.json", "r") as file:
     content = file.read()
 country_codes = json.loads(content)
 country = st.selectbox(
-    "Seleccione un país", ([key for key in country_codes.keys()]))
+    "Seleccione un país", ([key for key in country_codes.keys()]),
+    help="Elija un país")
 
 # Add text input, slider, select box and subheader
 place = st.text_input("Lugar: ", help="Ejemplo: Santiago")
 days = st.slider("Días pronosticados", min_value=1, max_value=5,
                  help="Seleccione el número de días para el pronóstico")
-option = st.selectbox("Seleccione el formato del pronóstico", ("Temperatura", "Cielos"))
+option = st.selectbox(
+    "Seleccione el formato del pronóstico", ("Temperatura", "Cielos"))
 st.subheader(f"{option} para los próximos {days} días en {place} {country}")
 
 if place:
