@@ -1,9 +1,8 @@
 import requests
-import os
-from dotenv import load_dotenv
+import streamlit as st
 
-load_dotenv()
-API_KEY = os.getenv("WEATHER_PASSWORD")
+
+API_KEY = st.secrets["pass"]
 
 def get_data(country, place, forecast=None):
     url = f"http://api.openweathermap.org/data/2.5/forecast?q={place},{country}&appid={API_KEY}&units=metric"
