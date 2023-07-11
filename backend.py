@@ -1,7 +1,8 @@
 import requests
 import os
+from dotenv import load_dotenv
 
-
+load_dotenv()
 API_KEY = os.getenv("WEATHER_PASSWORD")
 
 def get_data(country, place, forecast=None):
