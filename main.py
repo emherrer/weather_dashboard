@@ -10,7 +10,7 @@ st.set_page_config(page_title="Home",
                    page_icon="🗺",
                    layout="centered")
 
-st.title("Pronóstico del Tiempo")
+st.title("Pronóstico del Tiempo en Chile y el Mundo")
 
 # Add country codes box
 with open("countries.json", "r") as file:
